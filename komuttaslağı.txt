@@ -1,0 +1,19 @@
+const Discord = require('discord.js');
+const db = require('quick.db');
+
+exports.run = async (client, message, params, args) => {
+  
+  
+  
+}
+exports.conf = {
+    enabled: true,
+    guildOnly: true,
+    aliases: ["denemekomutu"],
+    permLevel: 0
+};
+exports.help = {
+    name: "dnm",
+    description: "doviz işte",
+    usage: "doviz"
+};

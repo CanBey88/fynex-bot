@@ -1,0 +1,60 @@
+client.on("message", message => {
+  const seksizaman = moment
+    .duration(client.uptime)
+    .format(" D [gün], H [saat], m [dakika], s [saniye]");
+    if(seksizaman > 2160000) return 
+   const replies = [            
+"Bıktım elinizden ama gıyamadım, geldim,", "Olmaz olsun yine geldim,", "Öleyimde gurtulayım bırakın peşimi,"];
+  const random2 = replies[Math.floor(Math.random() * replies.length)]
+   
+     const seksizaman2 = moment
+    .duration(client.reload)
+    .format(" D [gün], H [saat], m [dakika], s [saniye]");
+
+         
+  let kanal = "1014566073900732447"
+  client.channels.cache.get(kanal).send(`<:cevrimdisi:1014567987849723925> ${random2} (**Yeniden başlatılıyorum**)\n\n Uptime: (**${seksizaman}**)`)
+process.exit(0);
+if(seksizaman > 1) return 
+
+                  const replies3 = [            
+"Bıktım elinizden ama gıyamadım, geldim,", "Olmaz olsun yine geldim,", "Öleyimde gurtulayım bırakın peşimi,"];
+  const random3 = replies3[Math.floor(Math.random() * replies3.length)]
+            const replies23 = [
+              "23.62 saniye",
+              "17.67 saniye",
+              "33.76 saniye",
+              "17.61 saniye",
+              "17.62 saniye",
+              "17.63 saniye",
+              "17.64 saniye",
+              "17.65 saniye",
+              "17.66 saniye",
+              "17.47 saniye",
+              "17.68 saniye",
+              "17.69 saniye",
+              "17.70 saniye",
+              "17.71 saniye",
+              "17.72 saniye",
+              "17.73 saniye",
+              "17.74 saniye",
+              "17.75 saniye",
+              "17.76 saniye",
+              
+            ];
+  const random = replies23[Math.floor(Math.random() * replies23.length)]
+   const seksizaman3 = moment
+    .duration(client.uptime)
+    .format(" D [gün], H [saat], m [dakika], s [saniye]");
+    
+
+        
+  let kanal2 = "1014566073900732447"
+
+message.replyNoMention(` Başarılı! Bot yeniden başlatıldı mesajı gönderildi.`).then(msg => {
+client.channels.cache.get(kanal2).send(`<:online:1005054418967863346> ${random3} başlama sürem: (**${random}**)`)
+           console.clear();
+               
+               bot.login(process.env.TOKEN);
+})
+})

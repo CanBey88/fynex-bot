@@ -1,0 +1,55 @@
+const Discord = require("discord.js");
+const db = require("orio.db");
+
+exports.run = async (app, message, client) => {
+                    let sunucukaraliste = db.fetch(`sunucukaraliste_${message.guild.id}_${message.author.id}`)
+ const sunucuözel = new Discord.MessageEmbed()
+ .setColor("#f6ff00")
+ .setDescription(`**Oh Hayır olamaz! Bu sunucuda **${sunucukaraliste}** sebebiyle karalisteye alınmışsın dostum...**`)
+
+ .setAuthor(message.author.username, message.author.avatarURL())
+ .setFooter(message.author.username, message.author.avatarURL())
+ .setThumbnail(message.author.avatarURL({ dynamic: true }));
+  if(sunucukaraliste) 
+    return message.channel.send(sunucuözel)
+  
+              let karaliste = db.fetch(`ckaraliste.${message.author.id}`)
+ const fyneximbne = new Discord.MessageEmbed()
+ .setColor("#f6ff00")
+ .setDescription(`**${karaliste}** sebebiyle karalisteye alınmışsın!\nBeyaz listeye alınmak istiyorsan [[BURAYA]](https://discord.com/invite/PqJtVqbNXN) gelebilirsin!`)
+
+ .setAuthor(message.author.username, message.author.avatarURL())
+ .setFooter(message.author.username, message.author.avatarURL())
+ .setThumbnail(message.author.avatarURL({ dynamic: true }));
+  if(karaliste) 
+    return message.channel.send(fyneximbne)
+
+  const plasmic = new Discord.MessageEmbed()
+    .setColor("#00ff00")
+    .setDescription("⚙️ **Ping Hesaplanıyor...**");
+
+  let plasmicc = Date.now();
+  let plasmiccode = await message.channel.send(plasmic);
+  let plasmiccodee = Date.now() - plasmicc;
+  let plasmicAPI = app.ws.ping.toFixed(2);
+  setInterval(() => {
+    const yrnexembed = new Discord.MessageEmbed()
+      .setDescription(
+        `\n 💬  Mesaj Gecikme Süresi ; **${plasmiccodee}Ms** \n\n 👁‍🗨 Bot Gecikme Süresi ; **${plasmicAPI}Ms**`
+      )
+      .setColor("#00ff00");
+    plasmiccode.edit(yrnexembed);
+  }, 5000);
+};
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["ping"],
+  permLevel: 0
+};
+
+exports.help = {
+  name: "ping",
+  description: "Ping komutu işte yaw",
+  usage: "ping"
+};
